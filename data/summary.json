@@ -1,0 +1,33 @@
+{
+  "total_transactions": 1125,
+  "transaction_types": {
+    "invoice": 1000,
+    "consolidation": 97,
+    "transfer": 1,
+    "vendor_payment": 20,
+    "treasury_outgoing": 5,
+    "treasury_incoming": 2
+  },
+  "wallets": {
+    "A": {
+      "incoming": 0,
+      "outgoing": 1097
+    },
+    "unknown": {
+      "incoming": 1000,
+      "outgoing": 0
+    },
+    "B": {
+      "incoming": 99,
+      "outgoing": 6
+    },
+    "C": {
+      "incoming": 1,
+      "outgoing": 20
+    },
+    "external": {
+      "incoming": 25,
+      "outgoing": 2
+    }
+  }
+}

@@ -1,0 +1,316 @@
+[
+  {
+    "txid": "treasury_outgoing_0",
+    "date": "2024-02-22",
+    "block_height": 2219,
+    "inputs": [
+      {
+        "txid": "treasury_to_checking",
+        "vout": 1
+      },
+      {
+        "txid": "consolidation_0_5",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_5",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_7",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_7",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_3",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_1",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_3",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_0",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_1",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_4",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_6",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_9",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_13",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_9",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_2",
+        "vout": 0
+      }
+    ],
+    "usd_amount": 236188.68,
+    "btc_amount": 3.6751537,
+    "satoshis": 367515370,
+    "to_address": "external_recipient_0",
+    "wallet_from": "B",
+    "wallet_to": "external",
+    "type": "treasury_outgoing"
+  },
+  {
+    "txid": "treasury_outgoing_1",
+    "date": "2024-04-16",
+    "block_height": 2228,
+    "inputs": [
+      {
+        "txid": "consolidation_0_8",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_6",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_0",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_2",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_10",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_14",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_4",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_8",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_13",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_10",
+        "vout": 0
+      }
+    ],
+    "usd_amount": 120039.84,
+    "btc_amount": 1.387765,
+    "satoshis": 138776500,
+    "to_address": "external_recipient_1",
+    "wallet_from": "B",
+    "wallet_to": "external",
+    "type": "treasury_outgoing"
+  },
+  {
+    "txid": "treasury_outgoing_2",
+    "date": "2024-06-14",
+    "block_height": 2234,
+    "inputs": [
+      {
+        "txid": "consolidation_1_15",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_11",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_12",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_14",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_0_15",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_0",
+        "vout": 0
+      }
+    ],
+    "usd_amount": 96210.0,
+    "btc_amount": 0.6473643,
+    "satoshis": 64736430,
+    "to_address": "external_recipient_2",
+    "wallet_from": "B",
+    "wallet_to": "external",
+    "type": "treasury_outgoing"
+  },
+  {
+    "txid": "treasury_outgoing_3",
+    "date": "2024-08-11",
+    "block_height": 2244,
+    "inputs": [
+      {
+        "txid": "consolidation_0_12",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_8",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_4",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_6",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_3",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_2",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_1_11",
+        "vout": 0
+      }
+    ],
+    "usd_amount": 126089.17,
+    "btc_amount": 0.68474201,
+    "satoshis": 68474201,
+    "to_address": "external_recipient_3",
+    "wallet_from": "B",
+    "wallet_to": "external",
+    "type": "treasury_outgoing"
+  },
+  {
+    "txid": "treasury_outgoing_4",
+    "date": "2024-10-01",
+    "block_height": 2259,
+    "inputs": [
+      {
+        "txid": "treasury_outgoing_0",
+        "vout": 1
+      },
+      {
+        "txid": "consolidation_3_1",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_6",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_7",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_8",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_9",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_7",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_3",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_0",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_3_9",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_1",
+        "vout": 0
+      },
+      {
+        "txid": "consolidation_2_10",
+        "vout": 0
+      },
+      {
+        "txid": "treasury_outgoing_2",
+        "vout": 1
+      }
+    ],
+    "usd_amount": 220740.38,
+    "btc_amount": 1.0424768,
+    "satoshis": 104247680,
+    "to_address": "external_recipient_4",
+    "wallet_from": "B",
+    "wallet_to": "external",
+    "type": "treasury_outgoing"
+  },
+  {
+    "txid": "treasury_incoming_0",
+    "date": "2024-02-11",
+    "block_height": 2266,
+    "inputs": [
+      {
+        "txid": "external_source_0",
+        "vout": 0
+      }
+    ],
+    "usd_amount": 100000,
+    "btc_amount": 1.6108004,
+    "satoshis": 161080040,
+    "to_address": "msUABWjFv7Duv2i9AuR56GprgavDoyZ3Eo",
+    "wallet_from": "external",
+    "wallet_to": "B",
+    "type": "treasury_incoming"
+  },
+  {
+    "txid": "treasury_incoming_1",
+    "date": "2024-08-24",
+    "block_height": 2276,
+    "inputs": [
+      {
+        "txid": "external_source_1",
+        "vout": 0
+      }
+    ],
+    "usd_amount": 200000,
+    "btc_amount": 1.1016247,
+    "satoshis": 110162470,
+    "to_address": "mpkmSFEJp5Q3U55YQKMuYfE8gu5HiVPDmC",
+    "wallet_from": "external",
+    "wallet_to": "B",
+    "type": "treasury_incoming"
+  }
+]
