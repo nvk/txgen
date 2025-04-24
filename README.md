@@ -111,4 +111,4 @@ Visualizations are created in the `visualizations` directory as interactive HTML
 
 ## License
 
-MIT - Copyright (c) 2024 nvk --vibing 
+MIT - Copyright (c) 2025 nvk --vibing 
