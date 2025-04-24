@@ -113,4 +113,51 @@ plt.tight_layout()
 plt.savefig('screenshots/transaction_network.png', dpi=300)
 plt.close()
 
+# 6. True Waterfall Chart (showing incremental balance changes)
+plt.figure(figsize=(10, 6))
+
+# Create some example change data
+initial_balance = 5.0
+changes = np.random.uniform(-1, 2, len(months))
+changes[0] = initial_balance  # First bar is the starting balance
+
+# Calculate cumulative sums
+cumulative = np.cumsum(changes)
+
+# Create lists to store the bars
+bottoms = np.zeros(len(changes))
+bottoms[1:] = cumulative[:-1]  # Bottom of each bar is the previous cumulative value
+
+# Colors based on whether change is positive or negative
+colors = ['green' if x >= 0 else 'red' for x in changes]
+colors[0] = 'blue'  # Make initial balance blue
+
+# Create the bars
+plt.bar(x, changes, bottom=bottoms, color=colors, alpha=0.7)
+
+# Add a line showing cumulative balance
+plt.plot(x, cumulative, 'o-', color='black', linewidth=2)
+
+# Add labels and styling
+labels = ['Starting Balance'] + [f'Change in {month}' for month in months[1:]]
+plt.xticks(x, labels, rotation=45, ha='right')
+plt.ylabel('Balance Change (BTC)')
+plt.title('Bitcoin Balance Waterfall Chart')
+
+# Annotate each bar with its value
+for i, (change, cum) in enumerate(zip(changes, cumulative)):
+    plt.annotate(f'{change:.2f}', xy=(i, bottoms[i] + max(0, change/2)),
+                 xytext=(0, 5), textcoords='offset points',
+                 ha='center', va='bottom')
+    
+    # Add cumulative value at each point
+    plt.annotate(f'{cum:.2f}', xy=(i, cum),
+                 xytext=(0, 10), textcoords='offset points',
+                 ha='center', va='bottom', fontweight='bold')
+
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig('screenshots/true_waterfall.png', dpi=300)
+plt.close()
+
 print("Sample visualization images created in the screenshots directory") 

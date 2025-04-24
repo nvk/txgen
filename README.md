@@ -31,6 +31,9 @@ The project includes visualization tools to analyze the generated transaction da
 ### Transaction Network
 ![Transaction Network](screenshots/transaction_network.png)
 
+### Bitcoin Balance Waterfall Chart
+![True Waterfall Chart](screenshots/true_waterfall.png)
+
 ## Requirements
 
 - Python 3.7+
@@ -82,6 +85,7 @@ python visualize.py
 - **Wallet Balance Waterfall**: Shows how balances change over time in each wallet
 - **Total Balance Chart**: Displays combined balance of all wallets over time
 - **Transaction Network**: Network graph showing interconnection between wallets
+- **Bitcoin Balance Waterfall**: Displays incremental changes to balance with positive/negative indicators
 
 ## Output
 
