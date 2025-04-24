@@ -12,6 +12,25 @@ This tool generates a set of interdependent Bitcoin transactions that simulate r
 
 The generated data includes transaction dates, block heights, USD values, and proper UTXO dependencies to create a realistic simulation.
 
+## Visualization Examples
+
+The project includes visualization tools to analyze the generated transaction data:
+
+### Sankey Diagram - Bitcoin Flow Between Wallets
+![Sankey Diagram](screenshots/sankey_flow.png)
+
+### Transaction Timeline
+![Transaction Timeline](screenshots/transaction_timeline.png)
+
+### Wallet Balance Waterfall
+![Wallet Balance Waterfall](screenshots/wallet_balance_waterfall.png)
+
+### Total Bitcoin Balance Over Time
+![Total Balance](screenshots/total_balance.png)
+
+### Transaction Network
+![Transaction Network](screenshots/transaction_network.png)
+
 ## Requirements
 
 - Python 3.7+
@@ -19,6 +38,7 @@ The generated data includes transaction dates, block heights, USD values, and pr
 - bitcoinrpc
 - numpy
 - pycoin (optional, for future improvements)
+- For visualizations: plotly, pandas, networkx, matplotlib
 
 ## Installation
 
@@ -31,23 +51,37 @@ source venv/bin/activate
 
 # Install dependencies
 pip install python-bitcoinlib bitcoinrpc numpy pycoin requests
+pip install plotly pandas networkx matplotlib
 ```
 
 ## Usage
 
-Simply run the script:
+Generate transaction data:
 
 ```bash
 python txgen.py
 ```
 
-This will:
+Create visualizations:
+
+```bash
+python visualize.py
+```
+
+### Transaction Generation Steps
 1. Generate three wallets (Invoicing, Treasury, and Checking)
 2. Create 10,000 invoice transactions for the Invoicing wallet
 3. Generate bi-monthly consolidation transactions to the Treasury wallet
 4. Create transactions between Treasury and Checking wallets
 5. Add special larger transactions in/out of Treasury
 6. Save all data to the `data` directory
+
+### Visualization Types
+- **Sankey Diagram**: Shows the flow of funds between wallets
+- **Transaction Timeline**: Displays transactions over time with size indicating amount
+- **Wallet Balance Waterfall**: Shows how balances change over time in each wallet
+- **Total Balance Chart**: Displays combined balance of all wallets over time
+- **Transaction Network**: Network graph showing interconnection between wallets
 
 ## Output
 
@@ -62,6 +96,8 @@ The script generates several JSON files in the `data` directory:
 - `all_transactions.json`: All transactions in chronological order
 - `summary.json`: Summary statistics for the generated data
 
+Visualizations are created in the `visualizations` directory as interactive HTML files.
+
 ## Future Improvements
 
 - Integration with actual Bitcoin Core regtest node
@@ -71,4 +107,4 @@ The script generates several JSON files in the `data` directory:
 
 ## License
 
-MIT 
+MIT - Copyright (c) 2024 nvk --vibing 
