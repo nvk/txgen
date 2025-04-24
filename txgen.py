@@ -324,6 +324,49 @@ class WalletSimulator:
         # Add transactions to the main list
         self.transactions.extend(consolidated_txs)
         
+        # Verify no UTXOs are left in Wallet A - all should be consolidated to Treasury
+        if len(self.utxos['A']) > 0:
+            print(f"WARNING: {len(self.utxos['A'])} UTXOs were not consolidated from Wallet A to Treasury")
+            # Force consolidation of any remaining UTXOs
+            if len(self.utxos['A']) > 0:
+                remaining_utxos = self.utxos['A']
+                treasury_address = random.choice(wallet_b_addresses)
+                total_satoshis = sum(utxo['amount'] for utxo in remaining_utxos)
+                
+                # Create final consolidation transaction
+                tx = {
+                    'txid': 'final_consolidation',
+                    'date': self.end_date.isoformat(),
+                    'block_height': curr_block_height,
+                    'inputs': [{'txid': utxo['txid'], 'vout': utxo['vout']} for utxo in remaining_utxos],
+                    'satoshis': total_satoshis,
+                    'btc_amount': total_satoshis / COIN,
+                    'to_address': treasury_address,
+                    'wallet_from': 'A',
+                    'wallet_to': 'B',
+                    'type': 'consolidation'
+                }
+                
+                # Add to transactions list
+                consolidated_txs.append(tx)
+                self.transactions.append(tx)
+                
+                # Add to UTXO list for wallet B
+                self.utxos['B'].append({
+                    'txid': tx['txid'],
+                    'vout': 0,
+                    'amount': total_satoshis,
+                    'address': treasury_address,
+                    'block_height': curr_block_height
+                })
+                
+                # Clear all UTXOs from wallet A
+                self.utxos['A'] = []
+                
+                print(f"Created final consolidation transaction to move remaining UTXOs to Treasury")
+        else:
+            print("SUCCESS: All UTXOs from Wallet A were consolidated to Treasury")
+        
         # Save consolidation transactions to file
         with open(os.path.join(self.data_dir, 'consolidation_transactions.json'), 'w') as f:
             json.dump(consolidated_txs, f, indent=2)

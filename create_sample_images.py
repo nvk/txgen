@@ -20,17 +20,16 @@ y2 = np.cumsum(np.random.rand(len(months)) * 0.5)  # Wallet B
 y3 = np.random.rand(len(months)) * 0.3  # Wallet C
 
 # 1. True Sankey Diagram
-nodes = ['Invoicing', 'Treasury', 'Checking', 'External', 'Unknown']
-node_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
+nodes = ['Invoicing', 'Treasury', 'Checking', 'External']
+node_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
 
 # Define source, target, and value for Sankey diagram
-source = [0, 0, 1, 1, 2]  # Indices of source nodes
-target = [1, 4, 2, 3, 3]  # Indices of target nodes
-value = [50, 5, 15, 25, 10]  # Values of flows
+source = [0, 1, 1, 2]  # Indices of source nodes
+target = [1, 2, 3, 3]  # Indices of target nodes
+value = [55, 15, 25, 10]  # Values of flows
 
 # Create flow colors - using simple static colors
 link_colors = ['rgba(31, 119, 180, 0.4)', 
-               'rgba(31, 119, 180, 0.4)', 
                'rgba(255, 127, 14, 0.4)', 
                'rgba(255, 127, 14, 0.4)', 
                'rgba(44, 160, 44, 0.4)']
