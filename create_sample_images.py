@@ -6,6 +6,8 @@ Create sample visualization images for README
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import plotly.graph_objects as go
+import plotly.io as pio
 
 # Create screenshots directory if it doesn't exist
 os.makedirs('screenshots', exist_ok=True)
@@ -17,19 +19,46 @@ y1 = np.random.rand(len(months)) * 2  # Wallet A
 y2 = np.cumsum(np.random.rand(len(months)) * 0.5)  # Wallet B
 y3 = np.random.rand(len(months)) * 0.3  # Wallet C
 
-# 1. Sankey Diagram (simplified as a bar chart showing flows)
-plt.figure(figsize=(10, 6))
-plt.bar(x, y1, label='Invoicing -> Treasury', color='#1f77b4')
-plt.bar(x, y2, bottom=y1, label='Treasury -> Checking', color='#ff7f0e')
-plt.bar(x, y3, bottom=y1+y2, label='Checking -> External', color='#2ca02c')
-plt.xlabel('Month')
-plt.ylabel('Bitcoin Flow')
-plt.title('Sankey Flow Diagram Example')
-plt.xticks(x, months)
-plt.legend()
-plt.tight_layout()
-plt.savefig('screenshots/sankey_flow.png', dpi=300)
-plt.close()
+# 1. True Sankey Diagram
+nodes = ['Invoicing', 'Treasury', 'Checking', 'External', 'Unknown']
+node_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
+
+# Define source, target, and value for Sankey diagram
+source = [0, 0, 1, 1, 2]  # Indices of source nodes
+target = [1, 4, 2, 3, 3]  # Indices of target nodes
+value = [50, 5, 15, 25, 10]  # Values of flows
+
+# Create flow colors - using simple static colors
+link_colors = ['rgba(31, 119, 180, 0.4)', 
+               'rgba(31, 119, 180, 0.4)', 
+               'rgba(255, 127, 14, 0.4)', 
+               'rgba(255, 127, 14, 0.4)', 
+               'rgba(44, 160, 44, 0.4)']
+
+# Create Sankey diagram
+fig = go.Figure(data=[go.Sankey(
+    node=dict(
+        pad=15,
+        thickness=20,
+        line=dict(color="black", width=0.5),
+        label=nodes,
+        color=node_colors
+    ),
+    link=dict(
+        source=source,
+        target=target,
+        value=value,
+        color=link_colors
+    )
+)])
+
+fig.update_layout(
+    title_text="Bitcoin Flow Between Wallets",
+    font_size=12
+)
+
+# Save as PNG
+pio.write_image(fig, 'screenshots/sankey_flow.png', scale=2, width=1000, height=600)
 
 # 2. Transaction Timeline
 plt.figure(figsize=(10, 6))
